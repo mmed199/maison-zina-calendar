@@ -28,7 +28,7 @@ from logic import compute_blocks
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
-DOCS_DIR = ROOT / "docs"
+DOCS_DIR = ROOT / "public"
 STATE_DIR = ROOT / "state"
 
 
