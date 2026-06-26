@@ -1,0 +1,12 @@
+# Local feed URLs (contain private calendar tokens) — never commit
+feeds.local.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store

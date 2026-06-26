@@ -1,0 +1,19 @@
+{
+  "zina.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "zina.booking": "https://ical.booking.com/v1/export?t=REPLACE",
+
+  "room2.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "room2.booking": "https://ical.booking.com/v1/export?t=REPLACE",
+
+  "room3.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "room3.booking": "https://ical.booking.com/v1/export?t=REPLACE",
+
+  "room4.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "room4.booking": "https://ical.booking.com/v1/export?t=REPLACE",
+
+  "fh4.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "fh4.booking": "https://ical.booking.com/v1/export?t=REPLACE",
+
+  "fh5.airbnb":  "https://www.airbnb.com/calendar/ical/REPLACE.ics?s=REPLACE",
+  "fh5.booking": "https://ical.booking.com/v1/export?t=REPLACE"
+}

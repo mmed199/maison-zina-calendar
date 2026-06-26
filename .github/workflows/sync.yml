@@ -1,0 +1,46 @@
+name: Maison Zina Calendar Sync
+
+on:
+  schedule:
+    # Every 15 minutes (GitHub may add a few minutes of delay on free runners).
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}      # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write            # needed to commit generated feeds back to the repo
+
+concurrency:
+  group: mz-sync
+  cancel-in-progress: false  # never interrupt a run mid-publish
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sync
+        env:
+          FEEDS_JSON: ${{ secrets.FEEDS_JSON }}
+        run: python src/sync.py
+
+      - name: Commit & publish updated calendars
+        run: |
+          git config user.name "mz-sync-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs state
+          if git diff --cached --quiet; then
+            echo "No calendar changes."
+          else
+            git commit -m "Update synced calendars [skip ci]"
+            git push
+          fi

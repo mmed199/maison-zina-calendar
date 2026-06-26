@@ -1,0 +1,2 @@
+# Last-known-good parsed bookings per feed (JSON), committed so the fail-safe
+# cache survives across ephemeral GitHub Actions runs.

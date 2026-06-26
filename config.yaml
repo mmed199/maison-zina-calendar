@@ -1,0 +1,48 @@
+# Maison Zina — listing topology and relationships.
+#
+# IMPORTANT: This file contains NO feed URLs, only structure. The actual
+# Airbnb/Booking export URLs live in the FEEDS_JSON GitHub Actions secret
+# (or in feeds.local.json for local runs). That lets this repo stay PUBLIC
+# so GitHub Pages is free, without exposing your calendar URLs.
+#
+# Feed key convention used everywhere: "<listing_id>.<platform>"
+#   e.g.  zina.airbnb   room2.booking   fh5.airbnb
+
+site_name: "Maison Zina"
+timezone: "Africa/Casablanca"
+
+# The two platforms each listing exists on.
+platforms:
+  - airbnb
+  - booking
+
+# All listings. type=room   -> individually bookable room.
+#               type=full_house -> whole-house listing (FH4 and FH5 are
+#               mutually exclusive; either one booked = the whole house in use).
+#
+# The non-individually-bookable 5th room is intentionally NOT listed here:
+# it is never sold on its own, so it generates no bookings. It only matters
+# as the difference between FH4 and FH5, and both full-house listings already
+# block on "house in use", so it is fully covered.
+listings:
+  # --- Individually bookable rooms ---
+  - id: zina
+    name: "Zina Room"
+    type: room
+  - id: room2
+    name: "Room 2"
+    type: room
+  - id: room3
+    name: "Room 3"
+    type: room
+  - id: room4
+    name: "Room 4"
+    type: room
+
+  # --- Whole-house listings ---
+  - id: fh4
+    name: "Full House (4 rooms)"
+    type: full_house
+  - id: fh5
+    name: "Full House (5 rooms)"
+    type: full_house
